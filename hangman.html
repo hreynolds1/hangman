@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css">
+    <title>Hangman</title>
+    <h1>Hangman</h1>
+    <body>
+        <div style="display: flex;justify-content: center;align-items: center;">
+            <button id="start" style="height: 100px; width: 200px;border: 2px solid black; border-radius: 10px;" onclick="getword()">Start</button>
+        </div>
+        <div>
+            <h1 id="word"></h1>
+        </div>
+        <div id="wordpick" class="center">
+            <input type="text" id="wordinput" hidden=true>
+            <button id="wordsubmit" onclick="startgame()" hidden=true>Submit</button>
+        </div>
+        <div id="keyboard" hidden=true style="padding-top:50px;">
+            <div id="firstrow" style="display: flex;justify-content: center;align-items: center;">
+                <button class="active" onclick="buttonpress(this)">Q</button>
+                <button class="active" onclick="buttonpress(this)">W</button>
+                <button class="active" onclick="buttonpress(this)">E</button>
+                <button class="active" onclick="buttonpress(this)">R</button>
+                <button class="active" onclick="buttonpress(this)">T</button>
+                <button class="active" onclick="buttonpress(this)">Y</button>
+                <button class="active" onclick="buttonpress(this)">U</button>
+                <button class="active" onclick="buttonpress(this)">I</button>
+                <button class="active" onclick="buttonpress(this)">O</button>
+                <button class="active" onclick="buttonpress(this)">P</button>
+            </div>
+            <div class="keyboard" id="secondrow">
+                <button class="active" onclick="buttonpress(this)">A</button>
+                <button class="active" onclick="buttonpress(this)">S</button>
+                <button class="active" onclick="buttonpress(this)">D</button>
+                <button class="active" onclick="buttonpress(this)">F</button>
+                <button class="active" onclick="buttonpress(this)">G</button>
+                <button class="active" onclick="buttonpress(this)">H</button>
+                <button class="active" onclick="buttonpress(this)">J</button>
+                <button class="active" onclick="buttonpress(this)">K</button>
+                <button class="active" onclick="buttonpress(this)">L</button>
+            </div>
+            <div class="keyboard" id="thirdrow">
+                <button class="active" onclick="buttonpress(this)">Z</button>
+                <button class="active" onclick="buttonpress(this)">X</button>
+                <button class="active" onclick="buttonpress(this)">C</button>
+                <button class="active" onclick="buttonpress(this)">V</button>
+                <button class="active" onclick="buttonpress(this)">B</button>
+                <button class="active" onclick="buttonpress(this)">N</button>
+                <button class="active" onclick="buttonpress(this)">M</button>
+            </div>
+        </div>
+        <div class="center" hidden=true>
+            <h2 hidden=true id="win">You win!</h2>
+        </div>
+        <div class="center" hidden=true>
+            <h2 hidden=true id="lose">You lost idot</h2>
+        </div>
+        <div id="hangmancontainer" hidden=true>
+            <img src="0.png" id="hangman" hidden=true>
+        </div>
+    </body>
+    <script type="text/javascript" src="hangman.js"></script>
+</html>

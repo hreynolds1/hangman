@@ -1,0 +1,40 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+}
+.active{
+    background-color: white;
+    font-size: 45px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+}
+.inactive{
+    background-color: rgba(0,0,0,0.7);
+    font-size: 45px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+}
+.keyboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#hangman{
+    width: 300px;
+}
+#hangmancontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
