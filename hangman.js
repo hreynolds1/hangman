@@ -9,17 +9,16 @@ String.prototype.replaceAt = function(index, char) {
     a[index] = char;
     return a.join("");
 }
-String.prototype.uniqueChars = function(){
+String.prototype.uniqueChars = function(){//returns the amount of unique characters in a string
     strlist=this.split("")
     chars=[]
     for (x in strlist){
         if (!(strlist[x] in chars)){
             chars.push(strlist[x])
         }
-    }
+    } //for each unique character, adds it to the chars array
     return chars.length
 }
-console.log("abcdefg".uniqueChars())
 var chosenword="";
 var incompleteword="";
 var lives=9;
@@ -27,6 +26,7 @@ function getword(){
     document.getElementById("start").hidden=true
     document.getElementById("wordinput").hidden=false
     document.getElementById("wordsubmit").hidden=false
+    //gets da input from the DOM
 }
 function startgame(){
     document.getElementById("wordinput").hidden=true
@@ -43,16 +43,17 @@ function startgame(){
                 chosenword=chosenword.replace(splitword[x],"")
                 removespace=true
             }
+            //removes non-alphabet characters because that's cheating and cheaters are bad
+            //though you can still just put in a single letter and they probably lose
         }
     } catch (err){
         alert(err.message)
-    }
+    } //lol imagine using alerts, couldn't possibly be me a week ago
     incompleteword="_".repeat(chosenword.length)
     document.getElementById("word").innerHTML=incompleteword
-    alert(chosenword)
 }
 
-function buttonpress(ele){
+function buttonpress(ele){//i am pretty sure this is the function to guess a letter
     try{
         ele.onclick=function() {}
         ele.className="inactive"
@@ -62,11 +63,14 @@ function buttonpress(ele){
                     incompleteword=incompleteword.replaceAt(x,chosenword[x])
                 }
             }
+            //replaces the blank stuff with the letter you guessed
             document.getElementById("word").innerHTML=incompleteword
+            //updates the word
             if (incompleteword==chosenword){
                 document.getElementById("keyboard").hidden=true
                 document.getElementById("win").hidden=false
             }
+            //win condition
         } else {
             lives-=1
             document.getElementById("hangman").src=""+(9-lives)+".png"
@@ -75,6 +79,7 @@ function buttonpress(ele){
                 document.getElementById("lose").hidden=false
                 document.getElementById("lose").innerHTML=document.getElementById("lose").innerHTML+". The word was '"+chosenword+"'"
             }
+            //haha owned you lost idiot
         }
     } catch (err){
         alert(err.message)
